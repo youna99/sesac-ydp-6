@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tag 종류</title>
+</head>
+<body>
+    <h1>Tag 종류에 대해 배워보자!</h1>
+    <h2>두번째로 큰 제목</h2>
+    <h3>세번째로 큰 제목</h3>
+    <h4>네번째로 큰 제목</h4>
+    <h5>다섯번째로 큰 제목</h5>
+    <h6>여섯째로 큰 제목</h6>
+    <!-- h7태그는 존재하지않는 태그 -->
+    <!-- <h7>제목??</h7>  -->
+
+    <p>여기는 본문 영역입니다. 긴 글을 쓰고 있습니다.</p>
+    <br>
+    <br>
+    <br>
+    <p>여기는 본문 영역입니다. 긴 글을 쓰고 있습니다.</p>
+
+    <h3>오늘의 할일</h3>
+    <!-- ul tag type attribute: disc(default), square, circle, none -->
+    <ul type="circle">
+        <li>HTML 복습하기</li>
+        <li>운동하기</li>
+        <li>Git 명령어 연습하기</li>
+    </ul>
+
+    <h3>아이스 카페라떼 레시피~</h3>
+    <!-- ol tag type attribute: 1(default), a, A, i, I -->
+    <!-- start attr: 시작번호, reversed: 역순으로 -->
+    <ol type="1" start="4" reversed>
+        <li><strong>우유</strong>를 <em>180ml</em> 컵에 넣어주세요</li>
+        <li><b>얼음</b>을 컵에 가득 넣어주세요</li>
+        <li><i>에스프레소</i> 샷을 넣어주면</li>
+        <li><u>완성!</u><del>맛있게 드세요!</del></li>
+    </ol>
+
+    <!-- 수평줄 태그 -->
+    <hr>
+
+    <!-- 목록 태그의 중첩 사용 -->
+    <h3>내가 좋아하는 음식</h3>
+    <ul>
+        <li>양식
+            <ul>
+                <li>스파게티</li>
+                <li>스테이크</li>
+            </ul>
+        </li>
+        <li>한식
+            <ul>
+                <li>김치찌개</li>
+                <li>국밥</li>
+            </ul>
+        </li>
+        <li>일식
+            <ul>
+                <li>사시미</li>
+                <li>라멘</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h1>스타벅스</h1>
+    <ul>
+        <li>
+            <h2>아메리카노</h2>
+            <ol>
+                <li>R: 3000won</li>
+                <li>L: 3500won</li>
+            </ol>
+        </li>
+        <li>    
+            <h2>카페라떼</h2>
+            <ol>
+                <li>R: 3000won</li>
+                <li>L: 3500won</li>
+            </ol>
+        </li>
+        <li>
+            <h2>딸기주스</h2>
+            <ol>
+                <li>R: 3000won</li>
+                <li>L: 3500won</li>
+            </ol>
+        </li>
+        <li>
+            <h2>레모네이드</h2>
+            <ol>
+                <li>R: 3000won</li>
+                <li>L: 3500won</li>
+            </ol>
+        </li>
+    </ul>
+    <hr>
+
+    <p>
+        <strong>음료설명</strong>
+        <br>아메리카노는 <b>물</b>에 에스프레소 샷을 탄 음료입니다.
+        <br>카페라떼는 <b>우유</b>에 에스프레소 샷을 탄 음료입니다.
+        <br>유기농 딸기를 넣고 만든 <b>생과일</b> 주스입니다.
+        <br>레몬 착즙 주스와 <b>탄산수</b>를 이용해 만든 <i>톡</i> 쏘는 <i>탄산음료</i>입니다.
+    </p>
+
+    <hr>
+
+    <h2>img 태그</h2>
+    <!-- 상대경로(./ 생략 가능): 현재 위치를 기준으로하는 상대적인 경로
+        - 프로젝트의 위치가 바뀌어도 그대로 사용할 수 있다는 장점
+        - 목적 파일(이미지)의 위치가 바뀐다면 상대경로를 수정해야하는 단점
+        ex) ./src/img/img.png, ../../img.png
+    -->
+    <img src="./image/새싹.png" alt="새싹" width="300">
+    <img src="image/새싹.png" alt="새싹" width="300">
+
+    <br>
+    <!-- 절대 경로: root(맨 처음, 최상단)부터 해당 파일까지의 경로 
+        - 내 로컬 환경에서는 어느 곳에서든 접근 가능하다는 것이 장점
+        - 다른 로컬에서는 절대 경로가 실제로 동일해야만 접근이 가능하다는 것이 단점
+        ex) https://www.naver.com, C:/Users/...
+    -->
+    <img src="/Users/sba/Documents/github/sesac-ydp-6/02-html/image/새싹.png" alt="새싹">
+    <br>
+    <!-- 인터넷 이미지 주소로 지정 -->
+    <img src="data:image/png;base64,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" alt="Apple">
+
+
+    <hr>
+    <!-- 
+        a tag target attribute: 링크가 열릴 위치 지정
+        - _self (default): 현재 탭에서 열기
+        - _blank: 새 탭으로 열기
+    -->
+    <a href="http://www.naver.com">네이버 바로가기</a>
+    <a href="http://www.naver.com" target="_blank">네이버 바로가기</a>
+    <a href="http://www.naver.com" target="_blank" title="마우스를 올리면 나타나는 제목!">네이버 바로가기</a>
+
+    <!-- a 태그의 href속성 값으로는 인터넷 상의 주소 뿐만 아니라 프로젝트 폴더 내의 다른 html 문서의 주소를 넣어도 됨-->
+    <a href="./html-start.html">HTML 시작하기 공부내용 보기</a>
+
+</body>
+</html>
