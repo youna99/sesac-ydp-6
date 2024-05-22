@@ -1,0 +1,25 @@
+h3:hover {
+    background-color: pink;
+    color: tomato;
+}
+
+textarea:focus {
+    background-color: aqua;
+}
+
+#red:checked + label {
+    background-color: red;
+}
+
+#blue:checked + label {
+    background-color: blue;
+}
+
+#yellow:checked + label {
+    background-color: yellow;
+}
+
+button:active {
+    background-color: brown;
+    color: rgb(177, 234, 197);
+}

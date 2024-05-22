@@ -1,0 +1,39 @@
+/* 웹 폰트 (web-font) */
+/* 
+    - 구글 웹 폰트, 눈누 웹 사이트
+    - 모든 브라우저에서 보는 폰트를 통일
+    - 폰트를 다운로드 하는것이 아니라 link 태그에 걸려 있는 주소에서
+        폰트를 가져오는 방식
+    - 보통 기본 폰트는 body 태그에 작성.
+*/
+@font-face {
+    font-family: 'Ownglyph_ryurue-Rg';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2405-2@1.0/Ownglyph_ryurue-Rg.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    /* font-family: "Permanent Marker", cursive; */
+    /* "Permanent Marker 사용, 없다면 cursive로 쓸거야 */
+    font-family: 'Ownglyph_ryurue-Rg';
+}
+
+h1 {
+    font-family: "Permanent Marker", cursive;
+}
+
+h2 {
+    font-family: "Danfo", serif;
+}
+
+@font-face {
+    font-family: 'TTHakgyoansimDotbogiR';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_keris@1.0/TTHakgyoansimDotbogiR.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+div {
+    font-family: 'TTHakgyoansimDotbogiR';
+}
