@@ -1,0 +1,24 @@
+h1:hover {
+    color: red;
+}
+
+a:active {
+    background-color: blue;
+}
+
+input:focus {
+    background-color: orange;
+}
+
+
+.stripes div{
+    background-color: navy;
+    color: white;
+}
+
+.stripes > :nth-child(2),
+.stripes > :nth-child(6),
+.stripes > :nth-child(10) {
+    background-color: yellow;
+    color: black;
+}
