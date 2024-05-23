@@ -1,0 +1,25 @@
+h3:hover {
+    background-color: #f1b11b;
+    color: aliceblue;
+}
+
+#textarea:focus {
+    background-color: #eff966;
+}
+
+#red:checked+label {
+    background-color: coral;
+}
+
+#blue:checked+label {
+    background-color: skyblue;
+}
+
+#yellow:checked+label {
+    background-color: yellow;
+}
+
+button:active {
+    background-color: aqua;
+    color: darkslategrey;
+}
