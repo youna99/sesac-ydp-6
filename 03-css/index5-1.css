@@ -1,0 +1,29 @@
+#one {
+    width: 300px;
+    height: 300px;
+    border: 1px solid gray;
+    border-width: 1px 5px 8px 12px;
+}
+
+#two {
+    width: 300px;
+    height: 300px;
+    border: 5px solid gray;
+    border-style: solid dotted dashed double;
+}
+
+#three {
+    width: 300px;
+    height: 300px;
+    border: 5px solid gray;
+    border-color: yellow skyblue green pink;
+}
+
+#four {
+    width: 300px;
+    height: 300px;
+    border-top: 2px solid blue;
+    border-bottom: 4px solid red;
+    border-left: 6px solid orange;
+    border-right: 8px solid greenyellow;
+}

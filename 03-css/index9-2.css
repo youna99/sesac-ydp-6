@@ -1,0 +1,21 @@
+.container {
+    width: 800px;
+    height: 800px;
+    background-color: gray;
+    position: relative;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    left: 100px;
+    top: 250px;
+    transform: skewY(30deg);
+    transition: 1s;
+}
+
+.sky1:hover {
+    
+    transform: skewY(0);
+}
