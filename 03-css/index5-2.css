@@ -1,13 +1,17 @@
 div {
-    height: 250px;
     width: 250px;
+    height: 250px;
+}
+.out {
+    border: 5px solid blue;
+    border-radius: 50%;
+    padding: 8px;
+}
+
+.in {
     background-image: url(./image/곰돌이.jpeg);
     background-repeat: no-repeat;
+    background-color: aquamarine;
     background-position: center;
-    background-color: skyblue;
-    background-size: 60%;
-    border: 5px solid white;
-    outline: 8px solid green;
     border-radius: 50%;
-    margin: 10px;
 }
