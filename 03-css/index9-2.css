@@ -1,21 +1,42 @@
 .container {
-    width: 800px;
-    height: 800px;
+    width: 900px;
+    height: 600px;
     background-color: gray;
     position: relative;
 }
 
 img {
-    width: 200px;
+    width: 300px;
     height: 200px;
-    position: relative;
-    left: 100px;
-    top: 250px;
-    transform: skewY(30deg);
+    position: absolute;
+    top: 200px;
+    transform: skewY(25deg);
     transition: 1s;
 }
 
-.sky1:hover {
-    
+.sky1 {
+    left: 150px;
+    z-index: 3;
+}
+
+.sky2 {
+    left: 300px;
+    z-index: 2;
+}
+
+.sky3 {
+    left: 450px;
+    z-index: 1;
+}
+
+img:hover {
     transform: skewY(0);
+}
+
+.sky2:hover {
+    z-index: 4;
+}
+
+.sky3:hover {
+    z-index: 5;
 }
