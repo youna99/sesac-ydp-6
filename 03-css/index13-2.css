@@ -1,0 +1,17 @@
+.movetext {
+    position: relative;
+    animation: text 3s linear;
+    top: 0;
+    width: 100%;
+}
+
+@keyframes text {
+    0% {
+        left: 100%;
+        width: 300%;
+    }
+    100% {
+        left: 0;
+        width: 100%;
+    }
+}
