@@ -1,0 +1,187 @@
+body {
+    /* background-image bg.jpg 되도록 */
+    /* body- 수정하지 않아도 됩니다. */
+    background-image: url('./image2/브롤배경.webp');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+  }
+  
+  .container {
+    width: 100%;
+  }
+  
+  .container .heroes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 45vw;
+    margin: 25px auto;
+  }
+  
+  .container .heroes .hero {
+    width: 75px;
+    height: 75px;
+    background-color: lightgrey;
+    border: 3px solid white;
+    transform: skew(-10deg);
+    border-radius: 10%;
+    margin: 5px;
+    transition: 1s;
+    z-index: 1;
+  }
+  
+  .container .heroes .hero:hover {
+    background-color: orange;
+    transform: scale(1.5) skew(-10deg);
+    transition: 1s;
+    z-index: 2;
+  }
+  
+  .container .heroes .hero .image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+  }
+  
+  /* 로고 - 수정하지 않아도 됩니다. */
+  .container .logo {
+    max-width: 220px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .container .logo img {
+    width: 100%;
+  }
+  
+  /* 사진 넣기 작업 */
+  /* 사진이 해당 경로에 없다면 경로 수정해주세요. */
+  .container .heroes .hero:nth-child(1) .image {
+    background-image: url('./image2/hero1.webp');
+  }
+  
+  .container .heroes .hero:nth-child(2) .image {
+    background-image: url('./image2/hero2.webp');
+  }
+  
+  .container .heroes .hero:nth-child(3) .image {
+    background-image: url('./image2/hero3.webp');
+  }
+  
+  .container .heroes .hero:nth-child(4) .image {
+    background-image: url('./image2/hero4.webp');
+  }
+  
+  .container .heroes .hero:nth-child(5) .image {
+    background-image: url('./image2/hero5.webp');
+  }
+  
+  .container .heroes .hero:nth-child(6) .image {
+    background-image: url('./image2/hero6.webp');
+  }
+  
+  .container .heroes .hero:nth-child(7) .image {
+    background-image: url('./image2/hero7.webp');
+  }
+  
+  .container .heroes .hero:nth-child(8) .image {
+    background-image: url('./image2/hero8.webp');
+  }
+  
+  .container .heroes .hero:nth-child(9) .image {
+    background-image: url('./image2/hero9.webp');
+  }
+  
+  .container .heroes .hero:nth-child(10) .image {
+    background-image: url('./image2/hero10.webp');
+  }
+  
+  .container .heroes .hero:nth-child(11) .image {
+    background-image: url('./image2/hero11.webp');
+  }
+  
+  .container .heroes .hero:nth-child(12) .image {
+    background-image: url('./image2/hero12.webp');
+  }
+  
+  .container .heroes .hero:nth-child(13) .image {
+    background-image: url('./image2/hero13.webp');
+  }
+  
+  .container .heroes .hero:nth-child(14) .image {
+    background-image: url('./image2/hero14.webp');
+  }
+  
+  .container .heroes .hero:nth-child(15) .image {
+    background-image: url('./image2/hero15.webp');
+  }
+  
+  .container .heroes .hero:nth-child(16) .image {
+    background-image: url('./image2/hero16.webp');
+  }
+  
+  .container .heroes .hero:nth-child(17) .image {
+    background-image: url('./image2/hero17.webp');
+  }
+  
+  .container .heroes .hero:nth-child(18) .image {
+    background-image: url('./image2/hero18.webp');
+  }
+  
+  .container .heroes .hero:nth-child(19) .image {
+    background-image: url('./image2/hero19.webp');
+  }
+  
+  .container .heroes .hero:nth-child(20) .image {
+    background-image: url('./image2/hero20.webp');
+  }
+  
+  .container .heroes .hero:nth-child(21) .image {
+    background-image: url('./image2/hero21.webp');
+  }
+  
+  .container .heroes .hero:nth-child(22) .image {
+    background-image: url('./image2/hero22.webp');
+  }
+  
+  .container .heroes .hero:nth-child(23) .image {
+    background-image: url('./image2/hero23.webp');
+  }
+  
+  .container .heroes .hero:nth-child(24) .image {
+    background-image: url('./image2/hero24.webp');
+  }
+  
+  .container .heroes .hero:nth-child(25) .image {
+    background-image: url('./image2/hero25.webp');
+  }
+  
+  .container .heroes .hero:nth-child(26) .image {
+    background-image: url('./image2/hero26.webp');
+  }
+  
+  .container .heroes .hero:nth-child(27) .image {
+    background-image: url('./image2/hero27.webp');
+  }
+  
+  .container .heroes .hero:nth-child(28) .image {
+    background-image: url('./image2/hero28.webp');
+  }
+  
+  .container .heroes .hero:nth-child(29) .image {
+    background-image: url('./image2/hero29.webp');
+  }
+  
+  .container .heroes .hero:nth-child(30) .image {
+    background-image: url('./image2/hero30.webp');
+  }
+  
+  .container .heroes .hero:nth-child(31) .image {
+    background-image: url('./image2/hero31.webp');
+  }
+  
+  .container .heroes .hero:nth-child(32) .image {
+    background-image: url('./image2/hero32.webp');
+  }
+  
