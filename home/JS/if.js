@@ -11,5 +11,5 @@ if (age >= 20){
 } else if (age >= 0) {
     console.log('유아');
 } else {
-    console.log('잘못 입력하셨습니다!');
+    console.log('잘못 입력하셨습니다!!');
 }
