@@ -1,0 +1,46 @@
+.container {
+    background-color: rgb(107, 204, 237);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 10px; */
+    position: relative;
+    height: 50px;
+}
+
+i {
+    color: white;
+    font-size: 30px;
+    position: absolute;
+    left: 100px;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 0 20px;
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+    i {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .menu {
+        background-color: rgb(190, 231, 239);
+        display: flex;
+        flex-direction: column;
+        margin-top: 130px;
+        text-align: center;
+        width: 100%;
+    }
+
+    li:hover {
+        background-color: black;
+        color: white;
+    }
+}

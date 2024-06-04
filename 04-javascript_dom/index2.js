@@ -79,6 +79,6 @@ console.log(Math.floor(Math.random() * 11)); // 0 <= x < 11
 
 // 퀴즈 (실습)
 // Q1) 1 ~ 100
-console.log(Math.floor(Math.random() * 100)) + 1; // 1 <= x < 101
+console.log(Math.floor(Math.random() * 100) + 1); // 1 <= x < 101
 // Q2) 20 ~ 22
-console.log(Math.floor(Math.random() * 3)) + 20; // 20 <= x < 23 
+console.log(Math.floor(Math.random() * 3) + 20) ; // 20 <= x < 23 
