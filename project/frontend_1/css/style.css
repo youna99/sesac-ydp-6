@@ -3554,7 +3554,8 @@ input[type="button"].btn-block {
 .navbar-dark .navbar-brand {
   color: #fff; }
   .navbar-dark .navbar-brand:hover, .navbar-dark .navbar-brand:focus {
-    color: #fff; }
+    color: var(--blue);
+    /*color: #ffffff;*/ }
 
 .navbar-dark .navbar-nav .nav-link {
   color: rgba(255, 255, 255, 0.5); }
@@ -7311,10 +7312,11 @@ h1, h2, h3, h4, h5,
   z-index: 3; }
   @media (max-width: 991.98px) {
     .ftco-navbar-light {
-      background: #000 !important;
+      background: lemonchiffon !important;
       position: relative; } }
   .ftco-navbar-light .navbar-brand {
-    color: #fff;
+    color: black;
+    /*color: #fff;*/
     font-family: "Josefin Sans", Arial, sans-serif; }
     @media (min-width: 768px) {
       .ftco-navbar-light .navbar-brand {
@@ -7327,7 +7329,8 @@ h1, h2, h3, h4, h5,
     padding-left: 0;
     padding-right: 0;
     color: rgba(255, 255, 255, 0.9);
-    font-weight: 400;
+    font-weight: 500;
+    /*font-weight: 400;*/
     opacity: 1 !important; }
     @media (min-width: 768px) {
       .ftco-navbar-light .navbar-nav > .nav-item > .nav-link {
@@ -7338,7 +7341,8 @@ h1, h2, h3, h4, h5,
         color: black;
         /* color: rgba(255, 255, 255, 0.7);*/ } }
     .ftco-navbar-light .navbar-nav > .nav-item > .nav-link:hover {
-      color: #fac564; }
+      color: var(--blue);
+      /*color: #fac564;*/ }
   .ftco-navbar-light .navbar-nav > .nav-item .dropdown-menu {
     border: none;
     background: #fff;
@@ -7393,7 +7397,7 @@ h1, h2, h3, h4, h5,
     /*color: #fac564;*/ }
   .ftco-navbar-light .navbar-toggler {
     border: none;
-    color: rgba(255, 255, 255, 0.8) !important;
+    color: black !important;
     cursor: pointer;
     padding-right: 0;
     text-transform: uppercase;
@@ -7469,7 +7473,7 @@ h1, h2, h3, h4, h5,
       color: #fff; }
 
 .navbar-brand {
-  font-size: 24px;
+  font-size: 28px;
   line-height: 1; }
   .navbar-brand span {
     font-size: 24px;
