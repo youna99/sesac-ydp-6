@@ -36,20 +36,20 @@
           style="font-size: 20px;"></i>Sanrio<br><small>Korea</small></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
         aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-        Character
+        <a href="./character.html" style="color: black;">Character</a>
       </button>
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active"><a href="" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="" class="nav-link">Character</a></li>
+          <li class="nav-item"><a href="./character.html" class="nav-link">Character</a></li>
           <li class="nav-item"><a href="" class="nav-link">Place</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <main>
-    <section class="silder">
+  <main class="main">
+    <section class="slider">
       <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
@@ -75,16 +75,58 @@
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
           data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color: rgb(123, 123, 123);"></span>
+          <span class="carousel-control-prev-icon" aria-hidden="true"
+            style="background-color: rgb(123, 123, 123);"></span>
           <span class="visually-hidden">Previous</span>
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
           data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true" style="background-color: rgb(123, 123, 123);"></span>
+          <span class="carousel-control-next-icon" aria-hidden="true"
+            style="background-color: rgb(123, 123, 123);"></span>
           <span class="visually-hidden">Next</span>
         </button>
       </div>
     </section>
+
+    <section class="quick">
+      <div class="row">
+        <h2>Welcome to Sanrio!</h2>
+        <div class="hello col-lg-4">
+          <p>산리오캐릭터즈 홈페이지에 오신걸 환영합니다.</p>
+          <p>헬로키티 아일랜드, 롯데호텔 헬로키티룸 in 제주 많은 관심 부탁드립니다. </p>
+          <img src="./img/sanrio.png" alt="">
+        </div>
+        <div class="d-none d-lg-block q_btn col-lg-4">
+          <div class="sns">
+            <h5>Instargram</h5>
+            <a href="https://www.instagram.com/sanrio_kr/" target="_blank">
+              <img src="./img/instargram.png" alt="">
+            </a>
+            <h5>Youtube</h5>
+            <a href="https://www.youtube.com/c/sanriokorea/featured" target="_blank">
+              <img src="./img/youtube.png" alt="">
+            </a>
+          </div>
+      </div>
+        <div class="col-lg-4">
+          <div class="card bg-light">
+            <div class="card-body">
+              <h5 class="card-title">Quick Links</h5>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <a href="#Character">Character</a>
+                </li>
+                <li class="list-group-item">
+                  <a href="#Places">Place</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr>
 
     <section class="Character">
       <div class="container_character">
@@ -184,6 +226,75 @@
         </ul>
       </div>
     </section>
+
+    <hr>
+
+    <section class="place">
+      <h1>Place</h1>
+      <div class="row">
+        <table class="rwd-table col-lg-8">
+          <tbody>
+            <tr>
+              <th>매장명</th>
+              <th>연락처</th>
+              <th>운영 시간</th>
+              <th>주소</th>
+            </tr>
+            <tr>
+              <td data-th="place">
+                헬로키티 아일랜드
+                <br>
+                제주
+              </td>
+              <td data-th="number">
+                064-792-6114
+              </td>
+              <td data-th="operating hours">
+                9:00~18:00
+                <br>
+                * 하절기(7월~8월):
+                <br>
+                9:00~20:00
+              </td>
+              <td data-th="address">
+                제주특별자치도 서귀포시 안덕면
+                <br>
+                한창로 340 헬로키티 아일랜드
+              </td>
+            </tr>
+            <tr>
+              <td data-th="place">
+                롯데호텔 제주
+                <br>
+                헬로키티 룸
+              </td>
+              <td data-th="number">
+                064-731-1000
+              </td>
+              <td data-th="operating hours">
+                상시
+              </td>
+              <td data-th="address">
+                제주특별자치도 서귀포시
+                <br>
+                중문관광로 72번길 35,
+                <br>
+                롯데호텔제주
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="map col-lg-4">
+          <h4>Location</h4>
+          <div class="ratio ratio-16x9">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3335.0934061367047!2d126.34947117514368!3d33.29021925758352!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x350d02014b867d1b%3A0x68805e2e38d13afb!2z7Zes66Gc7YKk7Yuw7JWE7J28656c65Oc!5e0!3m2!1sko!2skr!4v1717689234717!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
 

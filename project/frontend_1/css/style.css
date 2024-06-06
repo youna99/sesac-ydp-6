@@ -5,17 +5,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
-
-.main_tit {
-  margin-bottom: 30px;
-  margin-top: 40px;
-  font-size: 3rem;
-  text-align: center;
-  font-weight: 500;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
-
-@media screen and (max-width: 736px) {
+@media screen and (max-width: 900px) {
   .main_tit {
     font-size: 2.33rem;
     margin-bottom: 20px;
@@ -25,6 +15,58 @@
   .title_en {
     display: none;
   }
+
+  .hello {
+    margin-bottom: 5%;
+  }
+
+  .view_btn {
+    width: 100%;
+    max-width: 95px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    padding: 7px 0;
+    border: solid 1px #222;
+    border-radius: 30px;
+    text-align: center;
+    font-size: 0.60rem;
+    background: transparent;
+    transition: .3s ease;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+  }
+}
+
+.main {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.slider {
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.card {
+  text-align: center;
+}
+
+.sns {
+  margin-left: 30%;
+}
+
+.sns img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10%;
+}
+
+.main_tit {
+  margin-bottom: 30px;
+  margin-top: 40px;
+  font-size: 3rem;
+  text-align: center;
+  font-weight: 500;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .view_btn {
@@ -40,23 +82,6 @@
   background: transparent;
   transition: .3s ease;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
-}
-
-@media screen and (max-width: 736px) {
-  .view_btn {
-    width: 100%;
-    max-width: 95px;
-    margin: 0 auto;
-    margin-bottom: 30px;
-    padding: 7px 0;
-    border: solid 1px #222;
-    border-radius: 30px;
-    text-align: center;
-    font-size: 0.60rem;
-    background: transparent;
-    transition: .3s ease;
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
-  }
 }
 
 .character_li {
@@ -90,7 +115,6 @@
   /* 마우스를 올리면 기본 이미지 숨김 */
 }
 
-
 .character_li img {
   object-fit: contain;
 }
@@ -110,10 +134,120 @@
 }
 
 
+.quick p {
+  margin-bottom: 2%;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
 
+.place h1 {
+  text-align: center;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  margin-bottom: 20px;
+}
 
+.rwd-table {
+  margin: auto;
+  min-width: 300px;
+  max-width: 100%;
+  border-collapse: collapse;
+}
 
+.rwd-table tr:first-child {
+  border-top: none;
+  background: #ffe69c;
+  color: black;
+}
 
+.rwd-table tr {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  background-color: #fefcf8;
+}
+
+.rwd-table tr:nth-child(odd):not(:first-child) {
+  background-color: #fcf8ef;
+}
+
+.rwd-table th {
+  display: none;
+}
+
+.rwd-table td {
+  display: block;
+}
+
+.rwd-table td:first-child {
+  margin-top: .5em;
+}
+
+.rwd-table td:last-child {
+  margin-bottom: .5em;
+}
+
+.rwd-table td:before {
+  content: attr(data-th) ": ";
+  font-weight: bold;
+  width: 120px;
+  display: inline-block;
+  color: #000;
+}
+
+.rwd-table th,
+.rwd-table td {
+  text-align: left;
+}
+
+.rwd-table {
+  color: #333;
+  border-radius: .4em;
+  overflow: hidden;
+}
+
+.rwd-table tr {
+  border-color: #bfbfbf;
+}
+
+.rwd-table th,
+.rwd-table td {
+  padding: .5em 1em;
+}
+@media screen and (max-width: 601px) {
+  .rwd-table tr:nth-child(2) {
+    border-top: none;
+  }
+}
+@media screen and (min-width: 800px) {
+  .rwd-table tr:hover:not(:first-child) {
+    background-color: #fbefd7;
+  }
+  .rwd-table td:before {
+    display: none;
+  }
+  .rwd-table th,
+  .rwd-table td {
+    display: table-cell;
+    padding: .25em .5em;
+  }
+  .rwd-table th:first-child,
+  .rwd-table td:first-child {
+    padding-left: 0;
+  }
+  .rwd-table th:last-child,
+  .rwd-table td:last-child {
+    padding-right: 0;
+  }
+  .rwd-table th,
+  .rwd-table td {
+    padding: 1em !important;
+  }
+}
+
+.map h4 {
+  text-align: center;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/* -------------------------------------------------- */
 
 
 :root {
