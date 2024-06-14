@@ -1,4 +1,4 @@
-// #1. setTimenout(code, delay)
+// #1. setTimeout(code, delay)
 // : delay(단위: ms) 시간 동안 기다리다가 code 함수를 실행
 
 // 실행 결과: 1 -> 3 -> 2
