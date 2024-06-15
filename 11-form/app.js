@@ -11,6 +11,8 @@ app.set('views', './views') // 뷰들이 위치하게 될 폴더 위치를 알�
 
 // ex. body-parser 모듈
 app.use(express.urlencoded({extended: true})); // urlencoded로 파싱된 body를 요청 -> post 요청으로 들어오는 모든 형식의 데이터를 파싱(풀어헤친다)
+// URL 인코딩된 데이터를 파싱하는 방법을 설정
+// false: querystring, true: 'qs'라이브러리(확장)
 app.use(express.json()); // 요청의 body 객체에 json 형태(일단은 js object와 유사한것으로 알고 있자)로 온다.
 
 // 라우팅 (Rounting) => 주소를 설정한다. ('/' '/getForm' 같은것)
