@@ -4,16 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- Axios CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="/static/css/thumbnail.css">
 </head>
 <body>
-    <h1><%= title%></h1>
-
-    <h2>Single file upload</h2>
-    <!-- multer 이용 시, 반드시 enctype="multipart/form-data"의 폼이어야 함!! -->
+    <h1><%= title %></h1>
+    <h2> Single file upload </h2>
+    <!-- multer 이용시 반드시 enctype="multipart/form-data"의 폼이어야 함-->
     <form action="/upload" method="POST" enctype="multipart/form-data">
-        <input type="file" name="userfile"> <br>
-        <input type="text" name="title">
+        <input type="file" name="userfile"><br>
+        <input type="text" name="title" >
         <button type="submit">업로드</button>
     </form>
+    <h2> Single file upload  case1</h2>
+    <!-- multer 이용시 반드시 enctype="multipart/form-data"의 폼이어야 함-->
+    <form action="/upload/array" method="POST" enctype="multipart/form-data">
+        <input type="file" name="banana" multiple ><br>
+        <input type="text" name="title" >
+        <button type="submit">업로드</button>
+    </form>
+    <h2> Single file upload  case2</h2>
+    <!-- multer 이용시 반드시 enctype="multipart/form-data"의 폼이어야 함-->
+    <form action="/upload/fields" method="POST" enctype="multipart/form-data">
+        <input type="file" name="kiwi"><br>
+        <input type="text" name="title1" > <br>
+        <input type="file" name="orange"><br>
+        <input type="text" name="title2" > <br>
+        <button type="submit">업로드</button>
+    </form>
+    <h2>동적 파일 업로드</h2>
+    <input type="file" name="thumbnail" id="thumbnail">
+    <button type="button" onclick="uploadThumbnail()">업로드</button>
+<!-- 썸네일 업로드 내용을 바로 업로드 -->
+            <img src="" alt=""> <br>
+            <script src="/static/js/thumbnail.js"></script>
 </body>
 </html>
