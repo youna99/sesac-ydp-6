@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h1>
+        <%= title %>
+    </h1>
+    <form name="register">
+        <input type="date" name="date" id="date"> <br>
+        <button type="button" onclick="getMovies();">영화 정보 가져오기</button> <br>
+    </form>
+
+    <div class="result"></div>
+
+    <script>
+        const resultBox = document.querySelector('.result');
+
+        // yyyy-mm-dd형태를 yyyymmdd형태로 바꿔주는 함수
+        function convertDate(dateInput) {
+                if (dateInput) {
+                    const dateParts = dateInput.split('-');
+                    const year = dateParts[0];
+                    const month = dateParts[1];
+                    const day = dateParts[2];
+
+                    return year + month + day;
+                } else {
+                    return '';
+                }
+
+            }
+
+        function getMovies() {
+            console.log('click');
+
+            const form = document.forms['register'];
+            // console.log(form.date.value); // 2024-06-18
+            let dateValue = form.date.value;
+            let date = convertDate(dateValue);
+            // console.log(date); // 20240618
+
+            const data = {
+                key: '0f811e08361b12500173232a355c4fdc',
+                targetDt: date,
+            };
+
+            $.ajax({
+                type:'get',
+                url: 'https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json',
+                data,
+                success: function(data) {
+                    // console.log(data);
+                    let dataResult = data.boxOfficeResult;
+                    // console.log(dataResult);
+                    // console.log(dataResult.dailyBoxOfficeList); // 배열
+                    let moveiList = dataResult.dailyBoxOfficeList;
+                    // for(let i = 0; i < moveiList.length; i++) {
+                    //     console.log(moveiList[i].movieNm);
+                    //     console.log(moveiList[i].rank);
+                    // }
+                    let movieInfo = '';
+                    moveiList.forEach((movie, index) => {
+                        movieInfo += `영화 이름은 ${movie.movieNm}이고 오늘의 순위는 ${movie.rank}위 입니다.<br><br>`;
+                    });
+                    resultBox.innerHTML = movieInfo;
+                    resultBox.style.color = 'green'
+                }
+            })
+        }   
+    </script>
+</body>
+
+</html>
