@@ -46,55 +46,11 @@ desc products;
 drop table products;
 
 -- 5. 테이블 수정
--- 이미 생성된 테이블에 데이터가 추가되었는데, 테이블 구조가 바뀌어야 하는 경-- 5-1. 컬럼 추가
+-- 이미 생성된 테이블에 데이터가 추가되었는데, 테이블 구조가 바뀌어야 하는 경
+-- 5-1. 컬럼 추가
 -- : 기존 데이터들은 new_column이 값자기 생겼으니 null 할당
 alter table products add new_column varchar(20);
 -- 5-2. 컬럼 타입 수정
 alter table products modify new_column int;
 -- 5-3. 컬럼 삭제
 alter table products drop new_column;
-
--- 9. group by: "~별로"
--- 고객별로 주문한 주문 건수 구하기
--- select 절에서, group by에서 사용한 속성과 집계함수만 사용 가능
-
-
-select custid, count(*) from orders group by custid;
-
--- 고객별로 주문한 상품 총 수량 구하기
-select custid, sum(amount) from orders group by custid;
-
--- 고객별로 주문한 총 주문액 구하기
-select custid, sum(price * amount) from orders group by custid;
-
--- 응용. 주문총액이 가장 큰 top3
-select custid, sum(price * amount) as 'total_pay' from orders group by custid order by total_pay desc limit 3;
-
--- 상품별로 판매 개수 구하기
-select prodname, sum(amount) from orders group by prodname;
-
--- 10. having: group by 절 이후에 추가 조건
-
--- 총 주문액이 10000원 이상인 고객에 대해서 // 고객별로 주문한 상품 총 수량 구하기
-select custid, sum(amount), sum(price * amount) from orders group by custid
-having sum(price * amount) >= 10000;
-
--- 총 주문액이 10000원 이상인 고객에 대해서 고객별로 주문한 상품 총 수량 구하기
--- (단, custid가 'bunny'인 고객은 제외하고 출력할 것)
-select custid, sum(amount), sum(price * amount) from orders
-where custid != 'bunny'
-group by custid
-having sum(price * amount) >= 10000;
-
-/*
-where vs. having
-
-having
-- 그룹에 대해서 필터링(그래서 group by 와 함께 쓰임)
-- group by 보다 뒤에 위치해야함
-- 집계 함수랑 함께 사용 가능
-
-where
-- 각각의 행을 필터링
-- group by 보다 앞에 위치
-*/
