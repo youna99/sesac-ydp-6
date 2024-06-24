@@ -26,5 +26,11 @@ exports.getDbComments = () => {
             date: '2022-11-02',
             comment: '첫 댓글입니당ㅎㅎ',
         },
+        {
+            id: 5,
+            userid: 'smail',
+            date: '2022-11-03',
+            comment: '우와 ^_^',
+        },
     ]
 }
