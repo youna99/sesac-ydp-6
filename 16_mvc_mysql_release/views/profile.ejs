@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <%- include('include/include', { title: '회원 정보' })%>
+  <body>
+    <h1>회원 정보</h1>
+    <!-- TODO: href 속성값 설정하기 -->
+    <a href="/user">HOME</a>
+    <p>ID 수정 불가능, Password, Name 수정 가능</p>
+
+    <!-- TODO: 각 input의 value 값을 로그인 한 사람의 정보로 채우기 -->
+    <form name="form_profile">
+      <label for="userid">ID</label>
+      <input type="hidden" id="id" value="<%= user[0].id %>" />
+      <!-- readonly: userid는 수정 불가능 (조건임) -->
+      <input id="userid" type="text" name="userid" value="<%= user[0].userid %>" readonly /><br />
+      <label for="password">Password</label>
+      <input id="password" type="password" name="pw" value="<%= user[0].pw %>" required /><br />
+      <label for="name">Name</label>
+      <input id="name" type="text" name="name" value="<%= user[0].name %>" required /><br />
+      <button type="button" onclick="profileEdit();">Edit</button>
+      <button type="button" onclick="profileDelete();">Delete</button>
+    </form>
+
+    <script>
+      // TODO: [edit] 버튼 클릭시 서버에 회원 정보 수정 요청하기
+      // patch /user/profile/edit
+      async function profileEdit() {
+        console.log('click edit btn');
+
+        const form = document.forms['form_profile'];
+        try {
+          const res = await axios ({
+            method: 'patch',
+            url: '/user/profile/edit',
+            data: {
+              id: form.id.value,
+              userid: form.userid.value,
+              pw: form.pw.value,
+              name: form.name.value
+            },
+          });
+          console.log(res);
+          const { data } = res;
+          // console.log(data);
+          if(data) {
+            alert('정보 수정 성공!');
+          }
+        } catch (error) {
+          console.error('Error edit:', error);
+        }
+      }
+
+      // TODO: [Delete] 버튼 클릭시 서버에 회원 정보 삭제 요청하기
+      // DELETE /user/profile/delete
+      async function profileDelete() {
+        console.log('click delete btn');
+
+        const form = document.forms['form_profile'];
+        try {
+          const res = await axios ({
+            method: 'delete',
+            url: '/user/profile/delete',
+            data: {
+              id: form.id.value,
+              userid: form.userid.value,
+              pw: form.pw.value,
+              name: form.name.value
+            },
+          });
+          console.log(res);
+          const { data } = res;
+          if(data) {
+            alert('회원 탈퇴 성공~')
+            document.location.href = '/user';
+          }
+        } catch (error) {
+          console.error('Error delete: ', error);
+        }
+      }
+    </script>
+  </body>
+</html>
