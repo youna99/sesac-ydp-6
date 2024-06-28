@@ -1,22 +1,20 @@
-const Sequelize = require('sequelize'); // 시쿼라이즈 패키지 불러옴.
+const Sequelize = require('sequelize'); // sequelize 패키지를 불러옴
 const config = require(__dirname + '/../config/config.json')["development"]; // db 연결 정보
-// // {
-//   "username": "user",
-//   "password": "12345678",
-//   "database": "codingon",
-//   "host": "127.0.0.1",
-//   "dialect": "mysql"
-// }
-const db = {}; // 빈객체
+const db = {}; // 빈 객체 
 
-const sequelize = new Sequelize(config.database, config.username, config.password, config);
-// sequelize 객체
-// 내가 어떤 데이터베이스랑 연결하는지 알려주고 sequelize 객체를 만듦.
+const sequelize = new Sequelize(
+  config.database, 
+  config.username, 
+  config.password, 
+  config
+); // sequelize 객체
 
 // 모델 불러오기
-const PlayerModel = require('./Player')(sequelize, Sequelize); // 함수라 불러오고 바로 호출
-const ProfileModel = require('./Profile')(sequelize, Sequelize);
-const TeamModel = require('./Team')(sequelize, Sequelize);
+const PlayerModel = require('./Player')(sequelize, Sequelize); 
+const TeamModel = require('./Team')(sequelize, Sequelize); 
+const ProfileModel = require('./Profile')(sequelize, Sequelize); 
+const GameModel = require('./Game')(sequelize, Sequelize); 
+const TeamGameModel = require('./TeamGame')(sequelize, Sequelize); 
 
 // 모델간 관계 연결
 // 1) Player : Profile = 1 : 1
@@ -50,6 +48,20 @@ PlayerModel.belongsTo(TeamModel, {
   foreignKey: 'team_id',
   // 참조하게 될 TeamModel의 키는 'team_id'
   targetKey: 'team_id'
+});
+
+// 3) Team : Game = N : M
+// 하나의 팀은 여러 게임 가능, 한 게임에는 여러 팀이 참여
+// 두 모델의 관계 모델은 TeamGameModel
+TeamModel.belongsToMany(GameModel, {
+  through: TeamGameModel, // 중계(관계) 테이블
+  foreignKey: 'team_id', // TeamGameModel에서 TeamModel을 참조하는 fk
+  otherKey: 'game_id', // TeamGameModel에서 GameModel을 참조하는 fk
+});
+GameModel.belongsToMany(TeamModel, {
+  through: TeamGameModel, // 중계(관계) 테이블
+  foreignKey: 'game_id', // TeamGameModel에서 GameModel을 참조하는 fk
+  otherKey: 'team_id'  // TeamGameModel에서 TeamModel을 참조하는 fk
 });
 
 db.sequelize = sequelize;
