@@ -61,8 +61,12 @@
     </table>
 </body>
 <script>
+    // 등록된 값 표 선택
     const tbody = document.querySelector('tbody');
+    // 등록 버튼 선택
+    const buttonGroup = document.querySelector('#button-group');
 
+    // 등록버튼 클릭시
     async function createVisitor() {
         console.log('등록버튼클릭');
         const form = document.forms['visitor-form'];
@@ -90,9 +94,108 @@
                 </tr>
             `;
             tbody.insertAdjacentHTML('beforeend', html);
+
+            // 입력창 초기화
+            form.title.value = '';
+            form.content.value = '';
+            form.writer.value = '';
         } catch (error) {
             console.error(error);
         }
+    };
+
+    // 삭제버튼 클릭시
+    async function deleteVisitor(obj, id) {
+        console.log(obj);
+        console.log(id);
+
+        if (!confirm('삭제하시겠습니까?')) {
+            return;
+        }
+        try {
+            const res = await axios({
+                method: 'delete',
+                url: '/post',
+                data: {
+                    id
+                }
+            })
+            console.log('delete res', res);
+            console.log('delete res.data', res.data);
+            if (res.data) {
+                obj.closest(`#tr_${id}`).remove();
+            }
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    // 수정버튼 클릭시
+    async function editVisitor(id) {
+        console.log(id);
+
+        try {
+            const res = await axios({
+                method: 'get',
+                url: `/post/${id}`,
+            })
+            console.log('edit res', res.data);
+
+            const { title, content, writer } = res.data;
+            const form = document.forms['visitor-form'];
+            form.title.value = title;
+            form.content.value = content;
+            form.writer.value = writer;
+
+            const html = `
+                <button type="button" onclick="editDo(${id});">변경</button>
+                <button type="button" onclick="editCancel();">취소</button>
+            `;
+            buttonGroup.innerHTML = html;
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    // 변경 버튼 클릭시
+    async function editDo(id) {
+        const form = document.forms['visitor-form'];
+
+        const res = await axios({
+            method: 'patch',
+            url: `/post/${id}`,
+            data: {
+                title: form.title.value,
+                content: form.content.value,
+                writer: form.writer.value
+            }
+        })
+        console.log('editDo res>>', res);
+
+        if (res.data) {
+            const children = document.querySelector(`#tr_${id}`).children;
+            children[0].textContent = form.title.value;
+            children[1].textContent = form.content.value;
+            children[2].textContent = form.writer.value;
+
+            // 입력창 초기화
+            editCancel();
+        }
+    }
+
+    // [취소] 버튼 클릭시
+    // - input 초기화
+    // - [등록] 버튼 되돌리기
+    function editCancel() {
+        // 1. input 초기화
+        const form = document.forms['visitor-form'];
+        form.title.value = ''
+        form.content.value = ''
+        form.writer.value = ''
+
+        // 2. [등록] 버튼 보이기
+        const html = `<button type="button" onclick="createVisitor();">등록</button>`;
+        buttonGroup.innerHTML = html;
     }
 </script>
 
