@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <%- include('partials/setup/head.ejs') %>
+  <link rel="stylesheet" href="/st/index.css">
+<body>
+  <%- include('partials/component/noSignInHeader.ejs') %>
+  <div class="signin_form">
+    <form id="signinForm">
+      <p class="signin_title">로그인 페이지 입니다!</p>
+      <input type="text" id="username" placeholder="사용자 이름" required>
+      <input type="password" id="userpassword" placeholder="비밀번호" required>
+    </form>
+    <button class="signin_btn" onclick="signinSubmit()">로그인</button>
+    <hr>
+    <div class="links">
+        <a href="/member">회원가입</a>
+    </div>
+  </div>
+</body>
+  <%- include('partials/setup/tail.ejs') %>
+  <script src="/sc/index.js"></script>
+</html>

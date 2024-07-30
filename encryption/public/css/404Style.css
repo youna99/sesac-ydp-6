@@ -1,0 +1,8 @@
+.image_404{
+  width: 500px;
+  height: 500px;
+  background-image: url('/im/duck.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}

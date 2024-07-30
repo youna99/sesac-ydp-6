@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <%- include('partials/setup/head.ejs') %>
+  <link rel="stylesheet" href="/st/boardDetail.css">
+<body>
+  <%- include('partials/component/signInHeader.ejs') %>
+  <section class="detail_container">
+    <div class="detail_inform_wrapper">
+      <span>글 번호 : </span>&nbsp;<div id="detail_id"><%= data.board_id%></div>
+    </div>
+    <div class="detail_inform_wrapper">
+      <span>글 제목 : </span>&nbsp;<div id="detail_title"><%= data.board_title%></div>
+    </div>
+    <div class="detail_inform_wrapper">
+      <span>작성자  : </span>&nbsp;<div class="detail_writer"><%= data.member.member_name%></div>
+    </div>
+    <div class="detail_inform_wrapper">
+      <span>작성시간 : </span>&nbsp;<div class="detail_time"><%= data.createdAt%></div>
+    </div>
+    <div class="detail_content"><%= data.board_content%></div>
+    <div class="detail_button_wrapper">
+      <% if (user && user.id === data.board_writer) { %>
+        <button class="open_modal_btn" id="detail_update_btn">글 수정</button>
+        <button id="detail_delete_btn" onclick="deleteBoard()">글 삭제</button>
+      <% } %>
+      <button id="return_board_btn">목록으로</button>
+    </div>
+  </section>
+  <%- include('partials/component/boardDetailModal.ejs')  %>
+</body>
+  <%- include('partials/setup/tail.ejs') %>
+  <script src="/sc/boardDetail.js"></script>
+</html>

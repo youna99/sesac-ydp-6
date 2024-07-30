@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <%- include('partials/setup/head.ejs') %>
+  <link rel="stylesheet" href="/st/index.css">
+<body>
+  <%- include('partials/component/signInHeader.ejs') %>
+  <div class="user_info_detail">
+    <input type="hidden" id="user_info_id" value="<%= user.id%>">
+    <div class="user_info_wrapper">
+      <span>이름 : </span><input type="text" id="user_info_username" value="<%= data.member_name%>" readonly>
+    </div>
+    <div class="user_info_wrapper">
+      <span>새로 사용할 비밀번호 : </span><input type="password" id="user_info_userpassword" value="" minlength="4">
+    </div>
+    <div class="user_info_wrapper">
+      <span>가입일 : </span><div id="user_info_createdAt"><%= data.createdAt%></div>
+    </div>
+  </div>
+  <button onclick="memberUpdate()"> 비밀번호 수정 </button>
+  <button onclick="memberDelete()"> 회원 탈퇴 </button>
+  <a href="/board"> 게시글 목록으로 </a>
+</body>
+  <%- include('partials/setup/tail.ejs') %>
+  <script src="/sc/index.js"></script>
+  <script src="/sc/profile.js"></script>
+</html>

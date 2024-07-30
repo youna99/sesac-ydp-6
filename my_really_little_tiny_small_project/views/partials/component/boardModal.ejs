@@ -1,0 +1,16 @@
+<div class="modal">
+  <div class="modal_body">
+    <span class="close_btn">&times;</span>
+    <p class="modal_title">게시글 작성하기!</p>
+    <form name="modal_post">
+      <div class="modal_content_wrapper">
+        <span>글제목 : </span><input type="text" id="wrtie_Board_Title" required>
+      </div>
+      <div class="modal_content_wrapper">
+        <span>작성자 : </span><input type="text" id="wrtie_Board_Writer" readonly value="<%= user.name %>">
+      </div>
+      <textarea class="modal_textArea" id="write_Board_Content" style="resize: none;"></textarea>
+      <button class="modal_post_write_btn">글 작성하기</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="modal">
+  <div class="modal_body">
+    <span class="close_btn">&times;</span>
+    <p class="modal_title">게시글 수정하기</p>
+    <form name="modal_update"> 
+      <input type="hidden" id="update_Board_Id" name="board_id" value="<%= data.board_id%>">
+      <div class="modal_content_wrapper">
+        <span>글제목 : </span><input type="text" id="update_Board_Title" required value="<%= data.board_title%>">
+      </div>
+      <div class="modal_content_wrapper">
+        <span>작성자 : </span><input type="text" id="update_Board_Writer" readonly value="<%= user.name %>">
+      </div>
+      <textarea class="modal_textArea" id="update_Board_Content" style="resize: none;"><%= data.board_content%></textarea>
+      <button class="modal_update_btn">글 수정하기</button>
+    </form>
+  </div>
+</div>
