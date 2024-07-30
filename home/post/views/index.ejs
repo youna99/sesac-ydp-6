@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- axios cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <title>main</title>
+</head>
+
+<body>
+    <form name="visitor-form">
+        <fieldset>
+            <legend>게시판 등록</legend>
+            <input type="text" id="title" placeholder="제목" /> <br />
+            <input type="text" id="content" placeholder="내용" /> <br />
+            <input type="text" id="writer" placeholder="작성자" /> <br />
+            <div id="button-group">
+                <button type="button" onclick="createVisitor();">등록</button>
+            </div>
+        </fieldset>
+    </form>
+    <br />
+
+    <table border="1" cellspacing="0">
+        <thead>
+            <tr>
+                <th>제목</th>
+                <th>내용</th>
+                <th>작성자</th>
+                <th>수정</th>
+                <th>삭제</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (let i=0; i < post.length; i++) { %>
+                <tr id="tr_<%= post[i].id %>">
+                    <a href="/post/<%= post.id %>">
+                        <td>
+                            <%= post[i].title %>
+                        </td>
+                    </a>
+                    <td>
+                        <%= post[i].content %>
+                    </td>
+                    <td>
+                        <%= post[i].writer %>
+                    </td>
+                    <td>
+                        <button type="button" onclick="editVisitor('<%= post[i].id %>')">수정</button>
+                    </td>
+                    <td>
+                        <button type="button" onclick="deleteVisitor(this, '<%= post[i].id %>')">삭제</button>
+                    </td>
+                </tr>
+                <% } %>
+        </tbody>
+    </table>
+</body>
+<script>
+    const tbody = document.querySelector('tbody');
+
+    async function createVisitor() {
+        console.log('등록버튼클릭');
+        const form = document.forms['visitor-form'];
+
+        try {
+            const res = await axios({
+                method: 'post',
+                url: '/post',
+                data: {
+                    title: form.title.value,
+                    content: form.content.value,
+                    writer: form.writer.value
+                }
+            });
+            console.log('res >>', res);
+            const { data } = res;
+
+            const html = `
+                <tr id="tr_${data.id}">
+                    <td>${data.title}</td>
+                    <td>${data.content}</td>
+                    <td>${data.writer}</td>
+                    <td><button type="button" onclick="editVisitor(${data.id})">수정</button></td>
+                    <td><button type="button" onclick="deleteVisitor(this, ${data.id});">삭제</button></td>
+                </tr>
+            `;
+            tbody.insertAdjacentHTML('beforeend', html);
+        } catch (error) {
+            console.error(error);
+        }
+    }
+</script>
+
+</html>
