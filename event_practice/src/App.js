@@ -1,14 +1,18 @@
-import './App.css';
-import HandlerEx from './components/ex/HandlerEx';
-import Color from './components/ex/Color';
+import "./App.css";
+import HandlerEx from "./components/ex/HandlerEx";
+import Color from "./components/ex/Color";
+import ChangeText from "./components/ex/ChangeText";
 
 function App() {
   return (
     <div className="App">
-      <HandlerEx/>
+      <HandlerEx />
       <hr />
 
       <Color />
+      <hr />
+
+      <ChangeText />
     </div>
   );
 }
