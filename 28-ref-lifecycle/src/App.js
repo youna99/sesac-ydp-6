@@ -3,7 +3,10 @@
 // import RefSample3 from "./RefSample3";
 // import RefSample4 from "./RefSample4";
 
-import Practice from "./Practice";
+import LifeCycleClass from "./LifeCycleClass";
+import LifeCycleFunc from "./LifeCycleFunc";
+
+// import Practice from "./Practice";
 
 function App() {
   return (
@@ -19,7 +22,12 @@ function App() {
 
       <RefSample4 /> */}
 
-      <Practice />
+      {/* <Practice /> */}
+
+      <LifeCycleClass />
+      <hr/>
+
+      {/* <LifeCycleFunc /> */}
     </div>
   );
 }
