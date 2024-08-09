@@ -5,6 +5,7 @@
 
 import LifeCycleClass from "./LifeCycleClass";
 import LifeCycleFunc from "./LifeCycleFunc";
+import PostList from "./PostList";
 
 // import Practice from "./Practice";
 
@@ -24,10 +25,12 @@ function App() {
 
       {/* <Practice /> */}
 
-      <LifeCycleClass />
-      <hr/>
+      {/* <LifeCycleClass /> */}
+      {/* <hr/> */}
 
       {/* <LifeCycleFunc /> */}
+
+      <PostList />
     </div>
   );
 }

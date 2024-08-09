@@ -1,0 +1,13 @@
+.header {
+    background-color: lightskyblue;
+    text-align: center;
+}
+
+li {
+    background-color: rgb(123, 169, 229);
+    list-style: none;
+}
+
+span {
+    color: gray;
+}
