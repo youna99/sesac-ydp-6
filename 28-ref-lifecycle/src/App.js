@@ -28,9 +28,9 @@ function App() {
       {/* <LifeCycleClass /> */}
       {/* <hr/> */}
 
-      {/* <LifeCycleFunc /> */}
+      <LifeCycleFunc />
 
-      <PostList />
+      {/* <PostList /> */}
     </div>
   );
 }

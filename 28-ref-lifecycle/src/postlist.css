@@ -1,13 +1,21 @@
-.header {
-    background-color: lightskyblue;
-    text-align: center;
+h2 {
+  background-color: lightgreen;
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 li {
-    background-color: rgb(123, 169, 229);
-    list-style: none;
-}
-
-span {
-    color: gray;
+  background-color: rgb(197, 246, 197);
+  border: 1px solid rgb(11, 63, 11);
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 500px;
 }
