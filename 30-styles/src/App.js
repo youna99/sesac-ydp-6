@@ -1,14 +1,15 @@
-import CssModuleComponents from './CssModuleComponents';
-import SassComponent from './SassComponent';
-import SassPrac1 from './SassPrac1';
-import SassPrac2 from './SassPrac2';
-import StyledComponent from './StyledComponent';
-import './styles/App.css'
+import CssModuleComponents from "./CssModuleComponents";
+import SassComponent from "./SassComponent";
+import SassPrac1 from "./SassPrac1";
+import SassPrac2 from "./SassPrac2";
+import SassPrac3 from "./SassPrac3";
+import StyledComponent from "./StyledComponent";
+import "./styles/App.css";
 
 function App() {
   return (
     <div className="App">
-      <h1>React Styling</h1>
+      {/* <h1>React Styling</h1>
       <hr />
       <CssModuleComponents />
       <hr />
@@ -17,8 +18,10 @@ function App() {
       <StyledComponent />
       <hr />
       <SassPrac1 />
-      <hr />
-      <SassPrac2 />
+      <hr /> */}
+      {/* <SassPrac2 /> */}
+
+      <SassPrac3 />
     </div>
   );
 }
