@@ -1,0 +1,26 @@
+@import "./utils";
+@import "./variables";
+
+.container {
+  display: flex;
+  flex-direction: column;
+
+  .circle {
+    @include circle(100px);
+
+    &.c1 {
+      background-color: $color-c1;
+      @include animation(animation1, 100px);
+    }
+
+    &.c2 {
+      background-color: $color-c2;
+      @include animation(animation2, 200px);
+    }
+
+    &.c3 {
+      background-color: $color-c3;
+      @include animation(animation3, 300px);
+    }
+  }
+}

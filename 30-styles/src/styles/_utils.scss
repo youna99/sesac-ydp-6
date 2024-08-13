@@ -1,4 +1,32 @@
 @mixin box($size) {
-    width: $size;
-    height: $size;
+  width: $size;
+  height: $size;
+}
+
+// SassPrac2
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+@mixin animation($animation-name, $angle) {
+  animation: #{$animation-name} 2s infinite;
+  @keyframes #{$animation-name} {
+    0% {
+      transform: translate(0px, 0px);
+    }
+    25% {
+      transform: translate(#{$angle}, 0px);
+    }
+    50% {
+      transform: translate(#{$angle}, #{$angle});
+    }
+    75% {
+      transform: translate(0px, #{$angle});
+    }
+    100% {
+      transform: translate(0px, 0px);
+    }
+  }
 }
