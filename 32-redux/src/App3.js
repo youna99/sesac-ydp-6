@@ -1,9 +1,14 @@
 import { useDispatch, useSelector } from 'react-redux';
 import './styles/Box.css';
+import { minus, plus } from './store/counterReducer';
+import { changeVisibility } from './store/isVisibleReducer';
 
 function App3() {
-  const number = useSelector((state) => state.number);
-  console.log('number >>>', number); // 100
+  //   const number = useSelector((state) => state.number);
+  //   console.log('number >>>', number); // 100
+  const number = useSelector((state) => state.counter.number); // {number:100}
+  //   console.log('state.counter >>>', state);
+  console.log('number >>>', number);
 
   return (
     <div className="App">
@@ -52,13 +57,18 @@ const Box4 = () => {
   // - 이 함수를 사용하여 상태 업데이트!
 
   // Redux 상태에서 number 값을 선택하고, 액션을 디스패치 할 준비!
-  const number = useSelector((state) => state.number);
+  const number = useSelector((state) => state.counter.number);
+  const isVisible = useSelector((state) => state.isVisible);
   const dispatch = useDispatch();
   return (
     <div className="Box4">
       <h2>Box4 : {number}</h2>
-      <button onClick={() => dispatch({ type: 'counter/PLUS' })}>plus</button>
-      <button onClick={() => dispatch({ type: 'counter/MINUS' })}>minus</button>
+      <h2>isVisible 값은 "{isVisible ? '참' : '거짓'}" 이다.</h2>
+      <button onClick={() => dispatch(plus())}>plus</button>
+      <button onClick={() => dispatch(minus())}>minus</button>
+
+      {/* Q) change 버튼 클릭하면 '참', '거짓' 글자 토글 */}
+      <button onClick={() => dispatch(changeVisibility())}>change</button>
     </div>
   );
 };
