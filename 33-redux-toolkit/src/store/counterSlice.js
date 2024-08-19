@@ -15,15 +15,27 @@ import { createSlice } from '@reduxjs/toolkit';
 // - 'reducers' : 상태를 업데이트 하는 리듀서 함수 정의
 
 // #1. 슬라이스 객체 정의
+// const counterSlice = createSlice({
+//   name: 'counter', // 즉, plus 액션은 'counter/plus' 라는 타입이다.
+//   initialState: { number: 100 },
+//   reducers: {
+//     plus: (state) => {
+//       state.number += 1; // 상태를 직접 변경 (immer 라이브러리 내부적으로 사용.)
+//     },
+//     minus: (state) => {
+//       state.number -= 1;
+//     },
+//   },
+// });
 const counterSlice = createSlice({
   name: 'counter', // 즉, plus 액션은 'counter/plus' 라는 타입이다.
   initialState: { number: 100 },
   reducers: {
-    plus: (state) => {
-      state.number += 1; // 상태를 직접 변경 (immer 라이브러리 내부적으로 사용.)
+    plus: (state, action) => {
+      state.number += action.payload; // 상태를 직접 변경 (immer 라이브러리 내부적으로 사용.)
     },
-    minus: (state) => {
-      state.number -= 1;
+    minus: (state, action) => {
+      state.number -= action.payload;
     },
   },
 });

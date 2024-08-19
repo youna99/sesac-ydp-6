@@ -59,8 +59,8 @@ const Box4 = () => {
       <h2>Box4 : {number}</h2>
       <h2>isVisible 값은 " {isVisible ? '참' : '거짓'} " 이다.</h2>
 
-      <button onClick={() => dispatch(plus())}>PLUS</button>
-      <button onClick={() => dispatch(minus())}>MINUS</button>
+      <button onClick={() => dispatch(plus(5))}>PLUS</button>
+      <button onClick={() => dispatch(minus(5))}>MINUS</button>
 
       {/* Q) CHANGE 버튼 클릭하면 '참', '거짓' 글자 토글 시키기. */}
       <button onClick={() => dispatch(changeVisibility())}>CHANGE</button>
