@@ -64,8 +64,8 @@ const Box4 = () => {
     <div className="Box4">
       <h2>Box4 : {number}</h2>
       <h2>isVisible 값은 "{isVisible ? '참' : '거짓'}" 이다.</h2>
-      <button onClick={() => dispatch(plus())}>plus</button>
-      <button onClick={() => dispatch(minus())}>minus</button>
+      <button onClick={() => dispatch(plus(4))}>plus</button>
+      <button onClick={() => dispatch(minus(4))}>minus</button>
 
       {/* Q) change 버튼 클릭하면 '참', '거짓' 글자 토글 */}
       <button onClick={() => dispatch(changeVisibility())}>change</button>
