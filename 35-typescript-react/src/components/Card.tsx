@@ -8,7 +8,7 @@ interface CardProps {
 // - 리액트에서 가장 유연하고 광범위한 타입.
 // : 컴포넌트가 자식으로 받을 수 있는 모든 형태의 값을 정의.
 
-// #1. children 직접 전달.
+// #1. children 직접 전달. ** 이게 중요
 export default function Card({ title, children }: CardProps) {
     return (
         <div>
