@@ -28,7 +28,11 @@
                     },
                 });
                 if (res.data.result) {
-                    localStorage.setItem('login', res.data.token);
+                    // 로컬스토리지 일 때,
+                    // localStorage.setItem('login', res.data.token);
+                    // document.location.href = '/';
+
+                    // 세션일때,
                     document.location.href = '/';
                 } else {
                     // 아이디나 비밀번호가 틀렸을경우
